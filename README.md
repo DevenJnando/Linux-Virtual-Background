@@ -1,4 +1,4 @@
-#Credit to Benjamin Elder:
+# Credit to Benjamin Elder:
 This project was inspired and based on the work of one Benjamin Elder who made a similar implementation using bodypix
 and docker. I thought the end result of his project was fantastic, but I found the installation/running steps tedious
 and irritating to set up. 
@@ -10,17 +10,17 @@ Here is a link to Benjamin's original blog post: https://elder.dev/posts/open-so
 
 check him out,
 he's a talented dude!
-#Dependencies:
-##Python:
+# Dependencies:
+## Python:
 Please look over `requirements.txt` and use this file to install the necessary dependencies.
 
-##Debian:
+## Debian:
 There is also one linux dependency necessary for this script to work: v4l2loopback. This can be installed with 
 the following command:
 
 `sudo apt-get install v4l2loopback-utils`
 
-#How to use:
+# How to use:
 ##Modprobing a dummy webcam device:
 You can create a new dummy webcam device with this command:
 
@@ -31,7 +31,7 @@ you can remove the dummy camera using this command:
 
 `sudo rmmod -r v4l2loopback`
 
-##Running the script:
+## Running the script:
 After the v4l2loopback device has been modprobed, use the command `python virtual_backgrounds.py` 
 to run using the default config.
 
@@ -41,7 +41,7 @@ You can use the `-o` or `--output` argument to change the file path of your dumm
 Some example backgrounds are included in the `backgrounds` directory. Feel free to add more to your local copy.
 The default background is currently set to Burzum's Filosofem album artwork. 
 
-##A note on Burzum:
+## A note on Burzum:
 
 If you haven't listened to any Burzum before, then
 stop fiddling with virtual backgrounds and go listen to Filosofem right now. Give it your full attention. If you don't like it, that's
