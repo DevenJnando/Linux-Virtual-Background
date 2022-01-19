@@ -41,9 +41,12 @@ You can use the `-o` or `--output` argument to change the file path of your dumm
 Some example backgrounds are included in the `backgrounds` directory. Feel free to add more to your local copy.
 The default background is currently set to Burzum's Filosofem album artwork. 
 
+## Effects:
+You can add some effects as well if you like. To add effects, simply set the relevant effect argument to true, e.g. `--sepia true`
+
 ## A note on Burzum:
 
 If you haven't listened to any Burzum before, then
 stop fiddling with virtual backgrounds and go listen to Filosofem right now. Give it your full attention. If you don't like it, that's
-fine, but do understand this, dear reader: it's not Varg and his music which is at fault, it is entirely *you* who is in
+fine, but do understand this, dear reader: it's not Varg and his music which is at fault, it is entirely *you* in
 the wrong. Peace and love!
