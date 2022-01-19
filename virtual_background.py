@@ -1,5 +1,3 @@
-import random
-
 import pyfakewebcam
 import os
 import numpy as np
