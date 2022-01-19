@@ -45,5 +45,5 @@ The default background is currently set to Burzum's Filosofem album artwork.
 
 If you haven't listened to any Burzum before, then
 stop fiddling with virtual backgrounds and go listen to Filosofem right now. Give it your full attention. If you don't like it, that's
-fine, but do understand this, dear reader: it's not Varg and his music which is at fault, it is entirely *you* who is in
+fine, but do understand this, dear reader: it's not Varg and his music which is at fault, it is entirely *you* in
 the wrong. Peace and love!
