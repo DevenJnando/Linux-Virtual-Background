@@ -6,7 +6,7 @@ import cv2
 import argparse
 
 BG_COLOR = (192, 192, 192)
-SCRIPT_DIR = os.path.dirname(__file__)
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 mp_drawing = mp.solutions.drawing_utils
 mp_selfie_segmentation = mp.solutions.selfie_segmentation
@@ -182,14 +182,19 @@ def parse_args():
 
 # Main script body
 
-args = parse_args()
-cam = CameraOutput(args)
-background = Background(args)
-effects = Effects(args)
-frame_counter = 0
-while cam.capture.isOpened():
-    frame = cam.run()
-    frame_no = frame_counter + 1
-    frame_counter = frame_no
-    frame_with_background = background.frame_with_background(frame, effects, frame_no)
-    cam.output.schedule_frame(frame_with_background)
+def main():
+    args = parse_args()
+    print(SCRIPT_DIR)
+    cam = CameraOutput(args)
+    background = Background(args)
+    effects = Effects(args)
+    frame_counter = 0
+    while cam.capture.isOpened():
+        frame = cam.run()
+        frame_no = frame_counter + 1
+        frame_counter = frame_no
+        frame_with_background = background.frame_with_background(frame, effects, frame_no)
+        cam.output.schedule_frame(frame_with_background)
+
+
+main()
