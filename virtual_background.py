@@ -120,7 +120,9 @@ class EffectApplicator:
 def generate_mask(current_frame):
     with mp_selfie_segmentation.SelfieSegmentation(
             model_selection=0) as selfie_segmentation:
-        results = selfie_segmentation.process(current_frame)
+        current_frame.flags.writeable = False
+        bilateral_frame = cv2.bilateralFilter(current_frame, 15, 75, 75)
+        results = selfie_segmentation.process(bilateral_frame)
         return results
 
 
@@ -180,6 +182,17 @@ def parse_args():
     return parser.parse_args()
 
 
+# Camera polling function
+
+def poll(cam, background, effects, frame_counter):
+    while cam.capture.isOpened():
+        frame = cam.run()
+        frame_no = frame_counter + 1
+        frame_counter = frame_no
+        frame_with_background = background.frame_with_background(frame, effects, frame_no)
+        cam.output.schedule_frame(frame_with_background)
+
+
 # Main script body
 
 def main():
@@ -189,12 +202,7 @@ def main():
     background = Background(args)
     effects = Effects(args)
     frame_counter = 0
-    while cam.capture.isOpened():
-        frame = cam.run()
-        frame_no = frame_counter + 1
-        frame_counter = frame_no
-        frame_with_background = background.frame_with_background(frame, effects, frame_no)
-        cam.output.schedule_frame(frame_with_background)
+    poll(cam, background, effects, frame_counter)
 
 
 main()
